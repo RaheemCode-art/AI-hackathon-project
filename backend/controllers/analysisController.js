@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import Groq from 'groq-sdk';
 import User from '../models/User.js';
 
