@@ -34,7 +34,7 @@ export const chatWithAI = async (req, res) => {
     `;
 
     const completion = await groq.chat.completions.create({
-      model: "mixtral-8x7b-32768",
+      model: "llama-3.1-8b-instant",
       messages: [{ role: "user", content: prompt }]
     });
 
