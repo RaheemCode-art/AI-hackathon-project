@@ -16,7 +16,7 @@ export const generateFitnessPlan = async (req, res) => {
 
     const user = await User.findById(req.user._id);
     user.goals = goal;
-    user.onboardingCompleted = true; // Onboarding complete flag true set kar diya
+    user.onboardingCompleted = true; 
     await user.save();
 
     const prompt = `
@@ -48,7 +48,7 @@ export const generateFitnessPlan = async (req, res) => {
     `;
 
     const completion = await groq.chat.completions.create({
-      model: "llama3-8b-8192",
+      model: "mixtral-8x7b-32768",
       messages: [{ role: "user", content: prompt }],
       response_format: { type: "json_object" }
     });
